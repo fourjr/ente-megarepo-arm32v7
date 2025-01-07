@@ -1,0 +1,18 @@
+services:
+  ente-server:
+    build: 
+      context: https://github.com/fourjr/ente-arm32v7.git#main:server
+    image: fourjr/ente-server-arm32v7
+    platform: linux/arm/v7
+
+  minio:
+    build:
+      context: https://github.com/mmensonen/minio-arm.git#master
+      dockerfile: Dockerfile.arm32v7
+    image: fourjr/minio-arm32v7
+    platform: linux/arm/v7
+
+  minio-mc:
+    build: https://github.com/fourjr/minio-mc-arm32v7.git#master
+    image: fourjr/minio-mc-arm32v7
+    platform: linux/arm/v7

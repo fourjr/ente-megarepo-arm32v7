@@ -1,0 +1,9 @@
+[submodule "minio-mc"]
+	path = minio-mc
+	url = https://github.com/fourjr/minio-mc-arm32v7
+[submodule "ente"]
+	path = ente
+	url = https://github.com/fourjr/ente-arm32v7
+[submodule "minio"]
+	path = minio
+	url = https://github.com/mmensonen/minio-arm
