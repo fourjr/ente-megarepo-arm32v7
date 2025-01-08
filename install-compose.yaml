@@ -10,6 +10,7 @@ services:
     environment:
       # Pass-in the config to connect to the DB and MinIO
       ENTE_CREDENTIALS_FILE: /credentials.yaml
+      GIN_MODE: release
     volumes:
       - custom-logs:/var/logs
       - ./museum.yaml:/museum.yaml:ro

@@ -1,0 +1,21 @@
+FROM alpine AS builder
+
+# Download QEMU, see https://github.com/docker/hub-feedback/issues/1261
+ENV QEMU_URL https://github.com/balena-io/qemu/releases/download/v7.0.0%2Bbalena1/qemu-7.0.0.balena1-arm.tar.gz
+RUN apk add curl && curl -L ${QEMU_URL} | tar zxvf - -C . --strip-components 1
+
+FROM arm32v7/alpine
+
+# Add QEMU
+COPY --from=builder qemu-arm-static /usr/bin
+
+RUN apk add --update curl && rm -rf /var/cache/apk/*
+
+RUN curl --silent --show-error --fail --location \
+	--header "Accept: application/tar+gzip, application/x-gzip, application/octet-stream" -o /usr/bin/mc \
+	"https://dl.min.io/client/mc/release/linux-arm/mc" \
+	 && chmod 0755 /usr/bin/mc
+
+EXPOSE 9000
+ENTRYPOINT ["mc"]
+VOLUME ["/export"]
