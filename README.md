@@ -4,6 +4,11 @@ docker-compose build --pull
 docker-compose push
 ```
 
+This pushes 3 images on Docker:
+- [fourjr/ente-server-arm32v7](https://hub.docker.com/r/fourjr/ente-server-arm32v7)
+- [fourjr/minio-arm32v7](https://hub.docker.com/r/fourjr/minio-arm32v7)
+- [fourjr/minio-mc-arm32v7](https://hub.docker.com/r/fourjr/minio-mc-arm32v7)
+
 # Install Ente on arm32v7 system
 [Reference](https://github.com/ente-io/ente/blob/main/server/docs/docker.md) with a modified compose.yaml
 1. Create directory
