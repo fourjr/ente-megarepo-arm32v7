@@ -7,8 +7,7 @@ services:
 
   minio:
     build:
-      context: minio  # https://github.com/mmensonen/minio-arm.git#master
-      dockerfile: Dockerfile.arm32v7
+      dockerfile: Dockerfile.minio
     image: fourjr/minio-arm32v7
     platform: linux/arm/v7
 

@@ -1,10 +1,10 @@
-To update:
+# Update:
 ```
 docker-compose build --pull
 docker-compose push
 ```
 
-To install:
+# Install Ente on arm32v7 system
 [Reference](https://github.com/ente-io/ente/blob/main/server/docs/docker.md) with a modified compose.yaml
 1. Create directory
 ```mkdir ente && cd ente```
@@ -30,3 +30,7 @@ touch museum.yaml
 ``` 
 docker compose up
 ```
+
+## Acknowledgements
+- Ente is a project by [ente-io](https://github.com/ente-io/ente)
+- Minio and minio mc docker script are adapted from [mmensonen/minio-arm](https://github.com/mmensonen/minio-arm)'s idea.
